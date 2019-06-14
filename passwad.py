@@ -3,22 +3,22 @@ class user:
     Class that generates new instances of users.
     """
 
-    user_list = [] # Empty contact list
+    user_list = [] # Empty user list
 
-    def __init__(user_name,password):
+    def __init__(self,user_name,password):
 
-        self.first_name = user_name
-        self.last_name = password
+        self.user_name = user_name
+        self.password = password
 
 class credentialss:
     """
     Class that generates new instances of Credentials.
     """
 
-    credentials_list = [] # Empty contact list
+    credentials_list = [] # Empty credentials list
 
-    def __init__(account_name,password):
+    def __init__(self,account_name,password):
 
-        self.first_name = account_name
+        self.account_name = account_name
         self.last_name = password
        
