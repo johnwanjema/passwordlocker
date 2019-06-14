@@ -10,7 +10,7 @@ class user:
         self.user_name = user_name
         self.password = password
 
-class credentialss:
+class credentials:
     """
     Class that generates new instances of Credentials.
     """
@@ -20,5 +20,5 @@ class credentialss:
     def __init__(self,account_name,password):
 
         self.account_name = account_name
-        self.last_name = password
+        self.password = password
        
