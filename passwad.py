@@ -13,28 +13,36 @@ class user:
     def save_user(self):
 
         '''
-        save_contact method saves contact objects into contact_list
+        save_account method saves account objects into account_list
         '''
 
         user.user_list.append(self)
 
-class credentials:
+class account:
     """
-    Class that generates new instances of Credentials.
+    Class that generates new instances of account.
     """
 
-    credentials_list = [] # Empty credentials list
+    account_list = [] # Empty account list
 
     def __init__(self,account_name,password):
 
         self.account_name = account_name
         self.password = password
 
-    def save_credentials(self):
+    def save_account(self):
 
         '''
-        save_contact method saves contact objects into contact_list
+        save_account method saves account objects into account_list
         '''
 
-        credentials.credentials_list.append(self)
+        account.account_list.append(self)
+
+    def delete_account(self):
+
+        '''
+        delete_account method deletes a saved account from the account_list
+        '''
+
+        account.account_list.remove(self)
        
