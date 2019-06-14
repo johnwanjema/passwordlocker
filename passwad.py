@@ -1,3 +1,6 @@
+#!/usr/bin/env python3.6
+import random
+import string
 class user:
     """
     Class that generates new instances of users.
@@ -45,4 +48,18 @@ class account:
         '''
 
         account.account_list.remove(self)
-       
+
+    
+
+def main():
+    print("Hello Welcome to password  locker .  Whereyou can save your passwoards")
+
+    print('\n')
+
+    
+
+    
+
+if __name__ == '__main__':
+
+    main()

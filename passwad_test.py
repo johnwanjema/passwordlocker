@@ -1,6 +1,8 @@
 import unittest # Importing the unittest module
 from passwad import user # Importing the user class
 from passwad import account # Importing the account class
+import random
+import string
 
 
 class Testuser(unittest.TestCase):
@@ -112,6 +114,10 @@ class Testaccount(unittest.TestCase):
             test_account.save_account()
             self.new_account.delete_account()# Deleting a account object
             self.assertEqual(len(account.account_list),1)
+
+    
+
+
 
 if __name__ == '__main__':
     unittest.main()
