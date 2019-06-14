@@ -53,10 +53,13 @@ class account:
 
 def main():
     print("Hello Welcome to password  locker .  Whereyou can save your passwoards")
-
+    
     print('\n')
 
-    
+    while True:
+            print("Use these short codes : su to signup for password locker,log :to login ,new - create a new account credentials, dc - display accounts,del to delete an account, fc -find an account,  ex -exit the app ")
+
+            
 
     
 
