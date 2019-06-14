@@ -9,6 +9,14 @@ class user:
 
         self.user_name = user_name
         self.password = password
+    
+    def save_user(self):
+
+        '''
+        save_contact method saves contact objects into contact_list
+        '''
+
+        user.user_list.append(self)
 
 class credentials:
     """
@@ -21,4 +29,12 @@ class credentials:
 
         self.account_name = account_name
         self.password = password
+
+    def save_credentials(self):
+
+        '''
+        save_contact method saves contact objects into contact_list
+        '''
+
+        credentials.credentials_list.append(self)
        
