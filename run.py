@@ -63,12 +63,32 @@ def display_accounts():
 def main():
     print("Hello Welcome to password  locker .  Whereyou can save your passwoards")
     
-    print('\n')
+    print('\t')
+   
 
     while True:
-            print("Use these short codes : su to signup for password locker,log :to login ,new - create a new account credentials, dc - display accounts,del to delete an account, fc -find an account,  ex -exit the app ")
+        print("Use these short codes : \n su to signup for password locker \n log :to login \n new - create a new account \n dc - display accounts \n del to delete an account \n fc -find an account \n ex -exit the app ")
+        short_code = input().lower()
 
-            short_code = input().lower()
+        if short_code == 'su':
+                print("New User")
+                print("-"*10)
+
+                print ("User  name ....")
+                user_name = input()
+
+                print("pasword...")
+                password = input()                
+
+
+                save_user(create_user(user_name,password)) # create and save new user.
+                
+                print(f"New user {user_name}  created")
+                print ('\t')
+
+        
+            
+            
 
             
     
