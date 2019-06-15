@@ -115,6 +115,13 @@ class Testaccount(unittest.TestCase):
             self.new_account.delete_account()# Deleting a account object
             self.assertEqual(len(account.account_list),1)
 
+    def test_display_allaccounts(self):
+        '''
+        test for method that returns 
+        all credentials saved
+        '''
+        self.assertEqual(account.display_allaccounts(),account.account_list)
+        
     
 
 

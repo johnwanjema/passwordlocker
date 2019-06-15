@@ -1,4 +1,3 @@
-#!/usr/bin/env python3.6
 import random
 import string
 class user:
@@ -14,9 +13,9 @@ class user:
         self.password = password
     
     def save_user(self):
-
+ 
         '''
-        save_account method saves account objects into account_list
+        save_ user method saves user objects into user_list
         '''
 
         user.user_list.append(self)
@@ -49,20 +48,12 @@ class account:
 
         account.account_list.remove(self)
 
-    
-
-def main():
-    print("Hello Welcome to password  locker .  Whereyou can save your passwoards")
-    
-    print('\n')
-
-    while True:
-            print("Use these short codes : su to signup for password locker,log :to login ,new - create a new account credentials, dc - display accounts,del to delete an account, fc -find an account,  ex -exit the app ")
-
-            
+    @classmethod
+    def display_allaccounts(cls):
+        '''
+        method that returns the credentials list
+        '''
+        return cls.account_list
 
     
 
-if __name__ == '__main__':
-
-    main()
