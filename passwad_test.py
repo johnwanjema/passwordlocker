@@ -61,12 +61,25 @@ class Testuser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = user("james","3425") # new contact
+        test_user = user("james","3425") # new user
         test_user.save_user()
 
         found_user = user.find_by_name("james")
 
         self.assertEqual(found_user.user_name,test_user.user_name)
+
+    def test_user_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the user.
+        '''
+
+        self.new_user.save_user()
+        test_user = user("Test","3344",) # new user
+        test_user.save_user()
+
+        user_exists = user.user_exist("Test")
+
+        self.assertTrue(user_exists)
        
 
 class Testaccount(unittest.TestCase):
@@ -141,12 +154,27 @@ class Testaccount(unittest.TestCase):
         '''
 
         self.new_account.save_account()
-        test_account = account("snapchat","paswa") # new contact
+        test_account = account("snapchat","paswa") # new account
         test_account.save_account()
 
         found_account = account.find_by_name("snapchat")
 
         self.assertEqual(found_account.account_name,test_account.account_name)
+    
+    def test_account_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the account.
+        '''
+
+        self.new_account.save_account()
+        test_account = account("Test","3344",) # new account
+        test_account.save_account()
+
+        account_exists = account.account_exist("Test")
+
+        self.assertTrue(account_exists)
+
+    
         
     
 

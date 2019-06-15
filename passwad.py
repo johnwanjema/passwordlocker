@@ -36,6 +36,21 @@ class user:
             if user.user_name == user_name:
                 return user
 
+    @classmethod
+    def user_exist(cls,user_name):
+        '''
+        Method that checks if a user exists from the user list.
+        Args:
+            user_name : user_name to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for user in cls.user_list:
+            if user.user_name == user_name:
+                    return True
+
+        return False
+
 class account:
     """
     Class that generates new instances of account.
@@ -85,6 +100,21 @@ class account:
         for account in cls.account_list:
             if account.account_name == account_name:
                 return account
+
+    @classmethod
+    def account_exist(cls,account_name):
+        '''
+        Method that checks if a account exists from the account list.
+        Args:
+            account_name : account_name to search if it exists
+        Returns :
+            Boolean: True or false depending if the account exists
+        '''
+        for account in cls.account_list:
+            if account.account_name == account_name:
+                    return True
+
+        return False
 
     
 
