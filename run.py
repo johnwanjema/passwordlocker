@@ -22,11 +22,11 @@ def login(password):
     """
     return  user.find_by_name(password)
 
-def check_existing_user(user_name):
+def check_existing_user(user_name,password):
     '''
     Function that check if a user exists with that number and return a Boolean
     '''
-    return user.user_exist(user_name)
+    return user.user_exist(user_name,password)
 
 def find_user(user_name):
     '''
@@ -125,7 +125,8 @@ def main():
                 
                 print("pasword...")
                 password = input()
-                if check_existing_user(user_name):
+
+                if check_existing_user(user_name,password):
                         search_user = find_user(user_name)                        
                         print('-' * 20)
                         while True:
@@ -167,25 +168,16 @@ def main():
                                 else:
                                         print('\n')
                                         print("You dont any account  yet")
-                                        print('\n')
-                                
+                                        print('\n')                               
                                 
 
-                        else:
-                                print("That user does not exist or you have input a wrong password or username")
-                                print('\n')
+                else:
+                        print("That user does not exist or you have input a wrong password or username")
+                        print('\t')
         else:
-                print("wrong short code try again")
-                
+                print("wrong short code try again")           
         
 
-
-        
-            
-            
-
-            
-    
 
 if __name__ == '__main__':
   main()

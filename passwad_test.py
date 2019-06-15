@@ -77,7 +77,7 @@ class Testuser(unittest.TestCase):
         test_user = user("Test","3344",) # new user
         test_user.save_user()
 
-        user_exists = user.user_exist("Test")
+        user_exists = user.user_exist("Test","3344")
 
         self.assertTrue(user_exists)
        
@@ -173,6 +173,21 @@ class Testaccount(unittest.TestCase):
         account_exists = account.account_exist("Test")
 
         self.assertTrue(account_exists)
+
+    def test_account_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the account.
+        '''
+
+        self.new_account.save_account()
+        test_account = account("Test","3344",) # new account
+        test_account.save_account()
+
+        account_exists = account.account_exist("Test")
+
+        self.assertTrue(account_exists)
+
+    
         
     
 
