@@ -20,6 +20,22 @@ class user:
 
         user.user_list.append(self)
 
+
+    @classmethod
+    def find_by_name(cls,user_name):
+        '''
+        Method that takes in a name and returns an user that matches that name.
+
+        Args:
+            user_name: name to search for
+        Returns :
+            User that matches the name.
+        '''
+
+        for user in cls.user_list:
+            if user.user_name == user_name:
+                return user
+
 class account:
     """
     Class that generates new instances of account.

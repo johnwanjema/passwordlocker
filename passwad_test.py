@@ -39,21 +39,34 @@ class Testuser(unittest.TestCase):
 
     def test_save_user(self):
         '''
-        test_save_account test case to test if the account object is saved into
-         the account list
+        test_save_user test case to test if the user object is saved into
+         the user list
         '''
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(user.user_list),1)
 
     def test_save_multiple_users(self):
             '''
-            test_save_multiple_account to check if we can save multiple account
-            objects to our account_list
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
             '''
             self.new_user.save_user()
             test_user = user("john","4321") # new user
             test_user.save_user()
             self.assertEqual(len(user.user_list),2)
+
+    def test_find_user_by_name(self):
+        '''
+        test to check if we can find an user by name
+        '''
+
+        self.new_user.save_user()
+        test_user = user("james","3425") # new contact
+        test_user.save_user()
+
+        found_user = user.find_by_name("james")
+
+        self.assertEqual(found_user.user_name,test_user.user_name)
        
 
 class Testaccount(unittest.TestCase):
