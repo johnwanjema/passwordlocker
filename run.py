@@ -16,6 +16,23 @@ def save_user(user):
     '''
     user.save_user()
 
+def login(password):
+    """
+    function to login
+    """
+    return  user.find_by_name(password)
+
+def check_existing_user(user_name):
+    '''
+    Function that check if a user exists with that number and return a Boolean
+    '''
+    return user.user_exist(user_name)
+
+def find_user(user_name):
+    '''
+    Function that finds an account by name and returns the account
+    '''
+    return account.find_by_name(user_name)
 
 
 
@@ -40,11 +57,11 @@ def del_account(account):
     '''
     account.delete_account()
 
-def find_account(name):
+def find_account(account_name):
     '''
     Function that finds an account by name and returns the account
     '''
-    return account.find_by_name(name)
+    return account.find_by_name(account_name)
 
 def display_accounts():
     '''
@@ -67,7 +84,7 @@ def main():
    
 
     while True:
-        print("Use these short codes : \n su to signup for password locker \n log :to login \n new - create a new account \n dc - display accounts \n del to delete an account \n fc -find an account \n ex -exit the app ")
+        print("Use these short codes : \n su to signup for password locker \n log :to login  \n ex -exit the app ")
         short_code = input().lower()
 
         if short_code == 'su':
@@ -86,6 +103,30 @@ def main():
                 print(f"New user {user_name}  created")
                 print ('\t')
 
+        elif short_code == 'log':
+                print("input username and password to login")
+                print("-"*100)
+                print("input username")
+                user_name = input()
+                print('\n')
+                
+                print("pasword...")
+                password = input()
+                if check_existing_user(user_name):
+                        search_user = find_user(user_name)                        
+                        print('-' * 20)
+                        print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n fc -find an account")
+                        short_codetwo = input().lower()
+
+                else:
+                        print("That user does not exist or you have input a wrong password or username")
+                        print('\n')
+        else:
+                print("wrong short code try again")
+                
+        
+
+
         
             
             
@@ -94,5 +135,4 @@ def main():
     
 
 if __name__ == '__main__':
-
-    main()
+  main()
