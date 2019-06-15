@@ -17,6 +17,8 @@ def save_user(user):
     user.save_user()
 
 
+
+
 #account functios
 def create_account(account_name,password):
     '''
@@ -31,6 +33,18 @@ def save_account(account):
     Function to save accounts
     '''
     account.save_account()
+
+def del_account(account):
+    '''
+    Function to delete an account
+    '''
+    account.delete_account()
+
+def find_account(name):
+    '''
+    Function that finds an account by name and returns the contact
+    '''
+    return account.find_by_name(name)
 
 
 
