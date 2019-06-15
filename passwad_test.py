@@ -101,7 +101,7 @@ class Testaccount(unittest.TestCase):
             objects to our account_list
             '''
             self.new_account.save_account()
-            test_account = account("john","4321") # new credential
+            test_account = account("instagram","4321") # new credential
             test_account.save_account()
             self.assertEqual(len(account.account_list),2)
    
@@ -110,7 +110,7 @@ class Testaccount(unittest.TestCase):
             test_delete_account to test if we can remove a account from our accountlist
             '''
             self.new_account.save_account()
-            test_account = account("john","4321") # new account
+            test_account = account("facebook","4321") # new account
             test_account.save_account()
             self.new_account.delete_account()# Deleting a account object
             self.assertEqual(len(account.account_list),1)
@@ -118,9 +118,22 @@ class Testaccount(unittest.TestCase):
     def test_display_allaccounts(self):
         '''
         test for method that returns 
-        all credentials saved
+        all accounts saved
         '''
         self.assertEqual(account.display_allaccounts(),account.account_list)
+
+    def test_find_account_by_name(self):
+        '''
+        test to check if we can find an account by name
+        '''
+
+        self.new_account.save_account()
+        test_account = account("snapchat","paswa") # new contact
+        test_account.save_account()
+
+        found_account = account.find_by_name("snapchat")
+
+        self.assertEqual(found_account.account_name,test_account.account_name)
         
     
 
