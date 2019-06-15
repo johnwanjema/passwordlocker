@@ -67,7 +67,7 @@ class account:
     @classmethod
     def display_allaccounts(cls):
         '''
-        method that returns the credentials list
+        method that returns the account list
         '''
         return cls.account_list
 

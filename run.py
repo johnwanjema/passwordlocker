@@ -42,9 +42,15 @@ def del_account(account):
 
 def find_account(name):
     '''
-    Function that finds an account by name and returns the contact
+    Function that finds an account by name and returns the account
     '''
     return account.find_by_name(name)
+
+def display_accounts():
+    '''
+    Function that returns all the saved accounts
+    '''
+    return account. display_allaccounts()
 
 
 
