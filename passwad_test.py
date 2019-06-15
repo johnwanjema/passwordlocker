@@ -173,8 +173,6 @@ class Testaccount(unittest.TestCase):
         account_exists = account.account_exist("Test")
 
         self.assertTrue(account_exists)
-
-    
         
     
 

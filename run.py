@@ -51,7 +51,7 @@ def save_account(account):
     '''
     account.save_account()
 
-def del_account(account):
+def delete_account(account):
     '''
     Function to delete an account
     '''
@@ -69,6 +69,18 @@ def display_accounts():
     '''
     return account. display_allaccounts()
 
+def check_existing_accounts(account_name):
+    '''
+    Function that check if a account exists with that number and return a Boolean
+    '''
+    return account.account_exist(account_name)
+
+def find_account(account_name):
+    '''
+    Function that finds an account by name and returns the account
+    '''
+    return account.find_by_name(account_name)
+
 
 
 
@@ -85,6 +97,7 @@ def main():
 
     while True:
         print("Use these short codes : \n su to signup for password locker \n log :to login  \n ex -exit the app ")
+        print("\t")
         short_code = input().lower()
 
         if short_code == 'su':
@@ -139,7 +152,18 @@ def main():
                                                 for account in display_accounts():
                                                         print(f"{account.account_name} {account.password} ")
 
-                                                print('\n')
+                                                print('no accounts yet')
+                                
+                                elif short_code1 == "del":
+                                       
+                                                print("Enter the number you want to delete")
+                                                search_number = input()
+                                                if check_existing_accounts(account_name):
+                                                        search_account = find_account(account_name)
+                                                        delete_account(search_account)
+                                                        print("account deleted")
+                                                else:
+                                                        print('account does not exsit')  
                                 else:
                                         print('\n')
                                         print("You dont any account  yet")
