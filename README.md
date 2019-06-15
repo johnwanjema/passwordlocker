@@ -8,7 +8,7 @@
 
 ## Description
 
-{application that will help us manage our passwords and even generate new passwords for us.}
+{This is an application that will help us manage our passwords and even generate new passwords for us.}
 
 ## Setup/Installation Requirements
 
@@ -24,16 +24,22 @@ Clone the repository to your local machine from the online repository(https://gi
 
 ## Behaviour Driven Devlopment(BDD)
 
-| Behaviour     | Input         | Output                   |
-| ------------- | ------------- | ------------------------ |
-|               |               |                          |
-| ------------- | ------------- | ------------------------ |
-|               |               |                          |
-| ------------- | ------------- | ------------------------ |
-|               |               |                          |
-| ------------- | ------------- | ------------------------ |
-|               |               |                          |
-| ------------- | ------------- | ------------------------ |
+| Behaviour        | Input                 | Output                      |
+| ---------------- | --------------------- | --------------------------- |
+| su(sign up)      | username ,password    | new user has been created   |
+| ---------------- | --------------------- | --------------------------- |
+| log(login)       | username, password    |                             |
+| ---------------- | --------------------- | --------------------------- |
+| exit             | ex                    | Bye thank you               |
+| ---------------- | --------------------- | --------------------------- |
+| new account      | account name,paswword | new account has been crated |
+| ---------------- | --------------------  | --------------------------- |
+| display accounts |                       | account name and password   |
+| ---------------  | --------------------- | --------------------------- |
+| Delete accounts  | Accout name           | Account deleted             |
+| ---------------  | --------------------  | --------------------------- |
+| exit(in login)   |                       | back to main menu           |
+| ---------------- | --------------------  | --------------------------- |
 
 ## Support and contact details
 
