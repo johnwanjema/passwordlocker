@@ -41,7 +41,7 @@ def create_account(account_name,password):
     '''
     Function to create a new account
     '''
-    new_account = user(account_name,password)
+    new_account = account(account_name,password)
     return new_account
 
 
@@ -108,19 +108,48 @@ def main():
                 print("-"*100)
                 print("input username")
                 user_name = input()
-                print('\n')
+               
                 
                 print("pasword...")
                 password = input()
                 if check_existing_user(user_name):
                         search_user = find_user(user_name)                        
                         print('-' * 20)
-                        print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n fc -find an account")
-                        short_codetwo = input().lower()
+                        while True:
+                                print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n fc -find an account")
+                                short_code1 = input().lower()                              
+                                
 
-                else:
-                        print("That user does not exist or you have input a wrong password or username")
-                        print('\n')
+                                if short_code1 == 'new':
+                                        
+                                        print ("Account name ....")
+                                        account_name = input()
+
+                                        print("pasword...")
+                                        password = input()
+
+                                        save_account(create_account(account_name,password))
+                                        print(f"New user {user_name}  created") 
+
+                                elif short_code1 == "dc":
+                                        if display_accounts():
+                                                print("Here is a list of all your contacts")
+                                                print('\n')
+
+                                                for account in display_accounts():
+                                                        print(f"{account.account_name} {account.password} ")
+
+                                                print('\n')
+                                else:
+                                        print('\n')
+                                        print("You dont any account  yet")
+                                        print('\n')
+                                
+                                
+
+                        else:
+                                print("That user does not exist or you have input a wrong password or username")
+                                print('\n')
         else:
                 print("wrong short code try again")
                 
