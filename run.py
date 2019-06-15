@@ -90,19 +90,19 @@ def find_account(account_name):
 
 
 def main():
-    print("Hello Welcome to password  locker .  Whereyou can save your passwoards")
+    print("Hello Welcome to password  locker.Whereyou can save your passwoards")
     
     print('\t')
    
 
     while True:
-        print("Use these short codes : \n su to signup for password locker \n log :to login  \n ex -exit the app ")
+        print("Use these short codes : \n su :to signup for password locker \n log :to login  \n ex :exit the app ")
         print("\t")
         short_code = input().lower()
 
         if short_code == 'su':
-                print("New User")
-                print("-"*10)
+                print("&"*100)
+                print("New User")               
 
                 print ("User  name ....")
                 user_name = input()
@@ -112,13 +112,13 @@ def main():
 
 
                 save_user(create_user(user_name,password)) # create and save new user.
-                
+                print ('\t')
                 print(f"New user {user_name}  created")
                 print ('\t')
 
         elif short_code == 'log':
-                print("input username and password to login")
-                print("-"*100)
+                print("%"*100)
+                print("input username and password to login")                
                 print("input username")
                 user_name = input()
                
@@ -128,36 +128,37 @@ def main():
 
                 if check_existing_user(user_name,password):
                         search_user = find_user(user_name)                        
-                        print('-' * 20)
+                        print('+' * 100)
                         while True:
-                                print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n fc -find an account")
+                                print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n  ex :to go back to the main menu")
                                 short_code1 = input().lower()                              
                                 
 
                                 if short_code1 == 'new':
-                                        
+                                        print("@"*100)
                                         print ("Account name ....")
                                         account_name = input()
 
                                         print("pasword...")
                                         password = input()
-
+                                        print('\t')
                                         save_account(create_account(account_name,password))
-                                        print(f"New user {user_name}  created") 
-
+                                        print(f"New account {account_name}  created") 
+                                        print("-"*100)
                                 elif short_code1 == "dc":
+                                        print("!"*100)
                                         if display_accounts():
-                                                print("Here is a list of all your contacts")
-                                                print('\n')
-
+                                                print("Here is a list of all your accounts")
+                                                print('\t')
                                                 for account in display_accounts():
                                                         print(f"{account.account_name} {account.password} ")
-
+                                        else:
+                                                print('\t')
                                                 print('no accounts yet')
                                 
                                 elif short_code1 == "del":
-                                       
-                                                print("Enter the number you want to delete")
+                                                print("-"*100)
+                                                print("Enter the account you want to delete")
                                                 search_number = input()
                                                 if check_existing_accounts(account_name):
                                                         search_account = find_account(account_name)
@@ -165,15 +166,24 @@ def main():
                                                         print("account deleted")
                                                 else:
                                                         print('account does not exsit')  
-                                else:
-                                        print('\n')
-                                        print("You dont any account  yet")
-                                        print('\n')                               
-                                
+                                elif short_code1 == 'ex':
+                                        print('\t')
+                                        break
 
+                                else:
+                                        print("="*100)
+                                        print("You dont any account  yet")
+                                        print('\t')   
+                                        
+                                
+                
                 else:
                         print("That user does not exist or you have input a wrong password or username")
                         print('\t')
+        elif short_code == 'ex':
+                        print('\t') 
+                        print("Bye .......")
+                        break
         else:
                 print("wrong short code try again")           
         
