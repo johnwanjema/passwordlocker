@@ -18,13 +18,13 @@ Clone the repository to your local machine from the online repository(https://gi
 ## Prerequisites
 
 A terminal that is python enabled.
-To make the program now executable we go to the terminal and type 
+To make the program now executable we go to the terminal and type
 
-$ chmod +x run.py
+\$ chmod +x run.py
 
 Now we can open the program with
 
-$ ./run.py
+\$ ./run.py
 
 ## Technologies Used
 
@@ -34,15 +34,17 @@ created application using
 
 ## Behaviour Driven Devlopment(BDD)
 
-| Behaviour        | Input                 | Output                      |
-| ---------------- | --------------------- | --------------------------- |
-| su(sign up)      | username ,password    | new user has been created   |
-| log(login)       | username, password    |                             |
-| exit             | ex                    | Bye thank you               |
-| new account      | account name,paswword | new account has been crated |
-| display accounts |                       | account name and password   |
-| Delete accounts  | Accout name           | Account deleted             |
-| exit(in login)   |                       | back to main menu           |
+| Behaviour              | Input                 | Output                              |
+| ---------------------- | --------------------- | ----------------------------------- |
+| su(sign up)            | username ,password    | new user has been created           |
+| log(login)             | username, password    |                                     |
+| exit                   | ex                    | Bye thank you                       |
+| new account            | account name,paswword | new account has been crated         |
+| display accounts       |                       | account name and password           |
+| Delete accounts        | Accout name           | Account deleted                     |
+| exit(in login)         |                       | back to main menu                   |
+| input own password     | username password     | account name                        |
+| Auto generate passwotd | username password     | password generated and account name |
 
 ## Support and contact details
 
