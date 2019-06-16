@@ -1,11 +1,13 @@
 #!/usr/bin/env python3.6
+import random
+import string
 from passwad import user # Importing the user class
 from passwad import account # Importing the account class
 
 #user functions
 def create_user(user_name,password):
     '''
-    Function to create a new user
+    Function to create a new userimport random
     '''
     new_user = user(user_name,password)
     return new_user
@@ -43,6 +45,13 @@ def create_account(account_name,password):
     '''
     new_account = account(account_name,password)
     return new_account
+
+def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+        '''
+        Function to generate an 8 character password for a credential
+        '''
+        gen_pass=''.join(random.choice(char) for _ in range(size))
+        return gen_pass
 
 
 def save_account(account):
@@ -117,7 +126,7 @@ def main():
                 print ('\t')
 
         elif short_code == 'log':
-                print("%"*100)
+                print("?"*100)
                 print("input username and password to login")                
                 print("input username")
                 user_name = input()
@@ -130,32 +139,42 @@ def main():
                         search_user = find_user(user_name)                        
                         print('+' * 100)
                         while True:
-                                print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n  ex :to go back to the main menu")
+                                print("Use these short codes\n new - create a new account \n dc - display accounts \n del to delete an account \n ex :to go back to the main menu")
                                 short_code1 = input().lower()                              
                                 
 
                                 if short_code1 == 'new':
-                                        print("@"*100)
+                                        print("*"*100)
                                         print ("Account name ....")
                                         account_name = input()
-
-                                        print("pasword...")
-                                        password = input()
-                                        print('\t')
-                                        save_account(create_account(account_name,password))
-                                        print(f"New account {account_name}  created") 
-                                        print("-"*100)
+                                        print("use numbes \n 1: to input your own password \n 2 : to get a generated password")
+                                        short_code = input().lower()
+                                        if short_code == "1":
+                                                print("pasword...")
+                                                print('\t')
+                                                password = input()
+                                                print('\t')
+                                                save_account(create_account(account_name,password))
+                                                print(f"New account {account_name}  created") 
+                                                print("-"*100)
+                                        elif short_code == "2":                                                
+                                                password = generate_password()                                                
+                                                print('\t')
+                                                print(f"your password is {password}")
+                                                save_account(create_account(account_name,password))
+                                                print(f"New account {account_name}  created") 
+                                                print("-"*100)                                       
                                 elif short_code1 == "dc":
                                         print("!"*100)
                                         if display_accounts():
                                                 print("Here is a list of all your accounts")
                                                 print('\t')
                                                 for account in display_accounts():
-                                                        print(f"{account.account_name} {account.password} ")
-                                        else:
-                                                print('\t')
-                                                print('no accounts yet')
-                                
+                                                        print(f" Account_name :{account.account_name} Password :{account.password} ")
+                                                        print('\t')
+                                        else:                                                
+                                                print('No accounts yet') 
+                                                print('\t')                               
                                 elif short_code1 == "del":
                                                 print("-"*100)
                                                 print("Enter the account you want to delete")
@@ -166,6 +185,7 @@ def main():
                                                         print("account deleted")
                                                 else:
                                                         print('account does not exsit')  
+                                                        print('\t')
                                 elif short_code1 == 'ex':
                                         print('\t')
                                         break

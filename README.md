@@ -18,7 +18,13 @@ Clone the repository to your local machine from the online repository(https://gi
 ## Prerequisites
 
 A terminal that is python enabled.
-Run the run.py file on the terminal to run the app
+To make the program now executable we go to the terminal and type 
+
+$ chmod +x run.py
+
+Now we can open the program with
+
+$ ./run.py
 
 ## Technologies Used
 
