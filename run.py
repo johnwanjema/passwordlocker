@@ -46,7 +46,7 @@ def create_account(account_name,password):
     new_account = account(account_name,password)
     return new_account
 
-def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+def generate_password(size=8,char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
         '''
         Function to generate an 8 character password for a credential
         '''
@@ -178,7 +178,7 @@ def main():
                                 elif short_code1 == "del":
                                                 print("-"*100)
                                                 print("Enter the account you want to delete")
-                                                search_number = input()
+                                                account_name = input()
                                                 if check_existing_accounts(account_name):
                                                         search_account = find_account(account_name)
                                                         delete_account(search_account)
